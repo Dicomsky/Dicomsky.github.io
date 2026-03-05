@@ -61,7 +61,7 @@ AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Re
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div>
-<div class="badge">IFAC 2025</div>
+<div class="badge">MECC 2025</div>
 <img src='images/mecc_demo.jpg' alt="sym" width="100%">
 </div></div>
 <div class='paper-box-text' markdown="1">
