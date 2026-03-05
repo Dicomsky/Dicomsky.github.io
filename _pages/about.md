@@ -39,11 +39,9 @@ My research focuses on **robot learning for soft robotic systems**, including:
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-[AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots](#)
+[AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots]([#](https://arxiv.org/abs/2511.18215))
 
-**Shangyuan Yuan**, Philipp Fairchild, Yifan Mei, X. Zhou, Xiaobo Tan
-
-[**Paper**](#) | [**Project**](#) | [**Code**](#)
+**Shangyuan Yuan**, Preston Fairchild, Yu Mei, Xinyu Zhou, Xiaobo Tan
 
 - We propose a markerless vision-based method for reconstructing the shape of soft continuum robots using appearance-based feature tracking, enabling robust and training-free perception of soft robotic deformation.
 
@@ -56,11 +54,9 @@ My research focuses on **robot learning for soft robotic systems**, including:
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-[Learning-Based Modeling of Soft Actuators Using Euler Spiral-Inspired Curvature](#)
+[Learning-Based Modeling of Soft Actuators Using Euler Spiral-Inspired Curvature]([#](https://arxiv.org/abs/2504.18692))
 
-Yifan Mei, **Shangyuan Yuan**, X. Qi, Philipp Fairchild, Xiaobo Tan
-
-[**Paper**](#)
+Yu Mei, **Shangyuan Yuan**, Xinda Qi, Preston Fairchild, Xiaobo Tan
 
 - A learning-based modeling framework for soft actuators using curvature representations inspired by Euler spirals to better capture deformation dynamics.
 
@@ -73,11 +69,11 @@ Yifan Mei, **Shangyuan Yuan**, X. Qi, Philipp Fairchild, Xiaobo Tan
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-[ParCo: Part-Coordinating Text-to-Motion Synthesis](#)
+[ParCo: Part-Coordinating Text-to-Motion Synthesis]([#](https://arxiv.org/abs/2403.18512))
 
-Q. Zou, **Shangyuan Yuan**, S. Du, Y. Wang, C. Liu, Y. Xu, J. Chen, X. Ji
+Qiran Zou*, **Shangyuan Yuan***, Shian Du, Yu Wang, Chang Liu, Yi Xu, Jie Chen, Xiangyang Ji
 
-[**Paper**](#)
+[**Paper**]([#](https://arxiv.org/abs/2403.18512)) [**Code**]([#](https://github.com/qrzou/ParCo))
 
 - A generative framework for text-to-motion synthesis that models coordination between body parts to improve motion realism and controllability.
 
@@ -90,11 +86,9 @@ Q. Zou, **Shangyuan Yuan**, S. Du, Y. Wang, C. Liu, Y. Xu, J. Chen, X. Ji
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-[Prediction of Coronary Artery Disease Based on Facial Temperature Information Captured by Non-contact Infrared Thermography](#)
+[Prediction of Coronary Artery Disease Based on Facial Temperature Information Captured by Non-contact Infrared Thermography]([#](https://pmc.ncbi.nlm.nih.gov/articles/PMC11149132/))
 
-M. Kung, Z. Zheng, S. Lin, X. Yu, C. Liu, M. Shi, R. Sun, **Shangyuan Yuan**, X. Lian, X. Su
-
-[**Paper**](#)
+Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen Sun, **Shangyuan Yuan**, Xiaocong Lian, Xiaoting Su, Yan Zhao, Zhe Zheng, Xiangyang Ji
 
 - Predicting coronary artery disease using facial thermal patterns captured through non-contact infrared thermography.
 
