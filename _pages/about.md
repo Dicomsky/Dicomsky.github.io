@@ -17,13 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a PhD student in Electrical and Computer Engineering at **Michigan State University**, advised by **[Dr. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/)** in the **Smart Microsystems Lab**.
+I am a PhD student in Electrical and Computer Engineering at **Michigan State University**, working with **[Dr. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/)** in the **[Smart Microsystems Laboratory](https://smlab.msu.edu/)**. Before joining MSU, I received my **M.S. in Artificial Intelligence** and **B.S. in Automation** from **Tsinghua University**, where I was advised by **[Prof. Xiangyang Ji](https://www.au.tsinghua.edu.cn/info/1080/3178.htm)**. During my master's study, my research explored the intersection of **AI and healthcare**, including transfer learning with large models and multimodal data fusion for medical applications. I was also involved in research on **generative models**, particularly in text-to-motion generation.
 
-My research focuses on **robot learning for soft robotic systems**, including:
-
-- Robot learning for teleoperation and imitation learning
-- Generative and world models for robot dynamics and planning
-- Vision-based perception and shape reconstruction for soft robots
+My research focuses on **robot learning for soft robotic systems**, aiming to develop **intelligent robotic systems** that integrate learning, perception, and control. I have worked on **vision-based state perception for soft robots**, enabling markerless shape reconstruction using visual observations. More recently, I have been exploring **robot learning approaches such as imitation learning and world models**, with the goal of enabling more intuitive teleoperation and adaptive control of soft robotic systems.
 
 ---
 
@@ -35,7 +31,7 @@ My research focuses on **robot learning for soft robotic systems**, including:
 
 - *2024.09* – Our work **“ParCo: Part-Coordinating Text-to-Motion Synthesis”** was accepted to **ECCV 2024**.
 
-- *2024.08* – Started my **PhD in Electrical and Computer Engineering at Michigan State University**, working with **Dr. Xiaobo Tan** in the **Smart Microsystems Lab**.
+- *2024.08* – Started my PhD in Electrical and Computer Engineering at Michigan State University, working with **Dr. Xiaobo Tan** in the Smart Microsystems Lab.
 
 - *2024.03* – Paper on **coronary artery disease prediction using infrared thermography** published in **BMJ Health & Care Informatics**.
 
