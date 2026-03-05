@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Shangyuan Yuan"
-description              : "Shangyuan Yuan's homepage."
+description              : 
 repository               : "RayeRen/acad-homepage.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -24,7 +24,7 @@ author:
   name             : "Shangyuan Yuan"
   avatar           : "images/profile.jpg"
   bio              : "Michigan State University"
-  location         : "Michigan, United States"
+  location         : "United States"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=OPfDqEwAAAAJ"
