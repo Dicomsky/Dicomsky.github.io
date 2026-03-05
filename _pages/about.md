@@ -29,7 +29,7 @@ My research focuses on **robot learning for soft robotic systems**, including:
 
 # 🔥 News
 
-- *2025.07* – Our paper **“AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots”** was accepted to **RA-L**.
+- *2025.11* – Our paper **“AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots”** was accepted to **RA-L**.
 
 - *2025.05* – Paper on **learning-based modeling of soft actuators using Euler spiral-inspired curvature** accepted to **MECC 2025**.
 
@@ -43,53 +43,58 @@ My research focuses on **robot learning for soft robotic systems**, including:
 
 <div class='paper-box'><div class='paper-box-image'><div>
 <div class="badge">RA-L 2025</div>
+<a href="images/AFT_demo.mp4" target="_blank">
 <video width="100%" autoplay loop muted playsinline>
   <source src="images/AFT_demo.mp4" type="video/mp4">
 </video>
+</a>
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots
-
-[**Paper**]([#](https://arxiv.org/abs/2511.18215))
+**AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots**
 
 **Shangyuan Yuan**, Preston Fairchild, Yu Mei, Xinyu Zhou, Xiaobo Tan
 
 - We propose a markerless vision-based method for reconstructing the shape of soft continuum robots using appearance-based feature tracking, enabling robust and training-free perception of soft robotic deformation.
+
+[**Paper**]([#](https://arxiv.org/abs/2511.18215))
 
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div>
 <div class="badge">MECC 2025</div>
-<img src='images/mecc_demo.jpg' alt="sym" width="100%">
+<a href="images/mecc_demo.jpg" target="_blank">
+  <img src="images/mecc_demo.jpg" width="100%">
+</a>
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-Learning-Based Modeling of Soft Actuators Using Euler Spiral-Inspired Curvature
-
-[**Paper**]([#](https://arxiv.org/abs/2504.18692))
+**Learning-Based Modeling of Soft Actuators Using Euler Spiral-Inspired Curvature**
 
 Yu Mei, **Shangyuan Yuan**, Xinda Qi, Preston Fairchild, Xiaobo Tan
 
 - A learning-based modeling framework for soft actuators using curvature representations inspired by Euler spirals to better capture deformation dynamics.
+
+[**Paper**]([#](https://arxiv.org/abs/2504.18692))
 
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div>
 <div class="badge">ECCV 2024</div>
+<a href="images/parco_demo.mp4" target="_blank">
 <video width="100%" autoplay loop muted playsinline>
   <source src="images/parco_demo.mp4" type="video/mp4">
 </video>
+</a>
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-ParCo: Part-Coordinating Text-to-Motion Synthesis
+**ParCo: Part-Coordinating Text-to-Motion Synthesis**
 
 Qiran Zou\*, **Shangyuan Yuan**\*, Shian Du, Yu Wang, Chang Liu, Yi Xu, Jie Chen, Xiangyang Ji
-
-\* Equal contribution
+(\* Equal contribution)
 
 [**Paper**]([#](https://arxiv.org/abs/2403.18512)) [**Code**]([#](https://github.com/qrzou/ParCo))
 
@@ -100,17 +105,19 @@ Qiran Zou\*, **Shangyuan Yuan**\*, Shian Du, Yu Wang, Chang Liu, Yi Xu, Jie Chen
 
 <div class='paper-box'><div class='paper-box-image'><div>
 <div class="badge">BMJ 2024</div>
-<img src='images/ir_demo.png' alt="sym" width="100%">
+<a href="images/ir_demo.png" target="_blank">
+  <img src="images/ir_demo.png" width="100%">
+</a>
 </div></div>
 <div class='paper-box-text' markdown="1">
 
-[Prediction of Coronary Artery Disease Based on Facial Temperature Information Captured by Non-contact Infrared Thermography]
-
-[**Paper**]([#](https://pmc.ncbi.nlm.nih.gov/articles/PMC11149132/))
+**Prediction of Coronary Artery Disease Based on Facial Temperature Information Captured by Non-contact Infrared Thermography**
 
 Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen Sun, **Shangyuan Yuan**, Xiaocong Lian, Xiaoting Su, Yan Zhao, Zhe Zheng, Xiangyang Ji
 
 - Predicting coronary artery disease using facial thermal patterns captured through non-contact infrared thermography.
+
+[**Paper**]([#](https://pmc.ncbi.nlm.nih.gov/articles/PMC11149132/))
 
 </div>
 </div>
