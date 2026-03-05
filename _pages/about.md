@@ -92,9 +92,9 @@ Yu Mei, **Shangyuan Yuan**, Xinda Qi, Preston Fairchild, Xiaobo Tan
 Qiran Zou\*, **Shangyuan Yuan**\*, Shian Du, Yu Wang, Chang Liu, Yi Xu, Jie Chen, Xiangyang Ji
 (\* Equal contribution)
 
-[**Paper**]([#](https://arxiv.org/abs/2403.18512)) [**Code**]([#](https://github.com/qrzou/ParCo))
-
 - A generative framework for text-to-motion synthesis that models coordination between body parts to improve motion realism and controllability.
+
+[**Paper**]([#](https://arxiv.org/abs/2403.18512)) [**Code**]([#](https://github.com/qrzou/ParCo))
 
 </div>
 </div>
