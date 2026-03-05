@@ -25,18 +25,6 @@ My research focuses on **robot learning and perception for intelligent robotic s
 
 ---
 
-# 🔥 News
-
-- *2025.11* – Our paper **“AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots”** was accepted to **RA-L**.
-
-- *2025.05* – Paper on **learning-based modeling of soft actuators using Euler spiral-inspired curvature** accepted to **MECC 2025**.
-
-- *2024.09* – Our work **“ParCo: Part-Coordinating Text-to-Motion Synthesis”** was accepted to **ECCV 2024**.
-
-- *2024.08* – Started my PhD in Electrical and Computer Engineering at Michigan State University, working with **Dr. Xiaobo Tan** in the Smart Microsystems Lab.
-
-- *2024.03* – Paper on **coronary artery disease prediction using infrared thermography** published in **BMJ Health & Care Informatics**.
-
 # 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'><div>
