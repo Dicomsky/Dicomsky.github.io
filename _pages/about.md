@@ -21,7 +21,36 @@ I am a PhD student in Electrical and Computer Engineering at **Michigan State Un
 
 Before joining MSU, I received my **M.S. in Artificial Intelligence** and **B.S. in Automation** from **Tsinghua University**, where I was advised by **[Dr. Xiangyang Ji](https://www.au.tsinghua.edu.cn/info/1080/3178.htm)**. During my master's study, my research focused on **AI for healthcare**, including transfer learning with large models and multimodal data fusion. I also worked on **generative models**, particularly for text-to-motion generation.
 
-My research focuses on **robot learning and perception for intelligent robotic systems**. I have worked on vision-based state perception for soft robots, enabling markerless shape reconstruction using visual observations. More recently, I have been exploring learning-based approaches such as imitation learning and world models for robot control and teleoperation.
+### Research Interests
+
+I am a Ph.D. student with a strong interest in **intelligent robotic systems** that integrate perception, learning, and control. My research aims to enable robots to understand and interact with the physical world through learning-based approaches.
+
+My previous work includes **vision-based perception for soft robots**, where I developed markerless methods for reconstructing the shape of soft continuum robots. I have also worked on **generative models for human motion synthesis**, focusing on coordinated text-to-motion generation.
+
+Currently, my research focuses on **robot learning**, particularly **imitation learning** and **world models for reinforcement learning**. I am currently working on several projects in these areas, with papers in preparation for submission.
+
+Below is a summary of my research interests and technical skills.
+
+### Research Skills
+
+- **Machine Learning**
+  - World Models for Reinforcement Learning
+  - Self-Supervised Learning (Contrastive Learning)
+  - Transfer Learning (Parameter-Efficient Fine-Tuning)
+
+- **Generative Models**
+  - Motion Generation (VQ-VAE)
+  - Action Generation (VAE, Diffusion Policy)
+
+- **Robotics**
+  - Teleoperation
+  - Imitation Learning
+  - Simulation (PyBullet)
+
+- **Programming**
+  - Python, C++, C#, Matlab
+  - Deep learning algorithm development
+  - Embedded systems (STM32 microcontrollers), Analog–digital circuit systems
 
 ---
 
