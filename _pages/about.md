@@ -89,7 +89,7 @@ Below is a summary of my research interests and technical skills.
 
 - We propose a markerless vision-based method for reconstructing the shape of soft continuum robots using appearance-based feature tracking, enabling robust and training-free perception of soft robotic deformation.
 
-[**Paper**]([#](https://arxiv.org/abs/2511.18215))
+[**Paper**](https://arxiv.org/abs/2511.18215)
 
 </div>
 </div>
