@@ -57,7 +57,7 @@ author:
   xing             :
   youtube          :
   wikipedia        :
-  cv               : "docs/CV.pdf"
+  cv               : "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/Dicomsky/Dicomsky.github.io/main/docs/CV.pdf"
 
 
 # Reading Files
