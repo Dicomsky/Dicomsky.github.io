@@ -25,6 +25,11 @@ My research focuses on **robot learning and perception for intelligent robotic s
 
 ---
 
+# 📖 Educations
+- *2024.09 - now*, **Ph.D student, in Electrical and Computer Engineering**, Michigan State University. 
+- *2021.09 - 2024.06*, **M.S. in Artificial Intelligence**, Tsinghua University.
+- *2017.09 - 2021.06*, **B.S. in Automation**, Tsinghua University.
+
 # 🔥 News
 
 - *2025.11* – Our paper **“AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots”** was accepted to **IEEE Robotics and Automation Letters (RA-L)**.
@@ -185,10 +190,6 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 </div>
 </div>
 
-# 📖 Educations
-- *2024.09 - now*, **Ph.D student, in Electrical and Computer Engineering**, Michigan State University. 
-- *2021.09 - 2024.06*, **M.S. in Artificial Intelligence**, Tsinghua University.
-- *2017.09 - 2021.06*, **B.S. in Automation**, Tsinghua University.
 
 # 📫 Contact
 Email: yuanshan@msu.edu  
