@@ -23,13 +23,7 @@ Before joining MSU, I received my **M.S. in Artificial Intelligence** and **B.S.
 
 ### 🧠 Research Interests
 
-I am a Ph.D. student with a strong interest in **intelligent robotic systems** that integrate perception, learning, and control. My research aims to enable robots to understand and interact with the physical world through learning-based approaches.
-
-My previous work includes **vision-based perception for soft robots**, where I developed markerless methods for reconstructing the shape of soft continuum robots. I have also worked on **generative models for human motion synthesis**, focusing on coordinated text-to-motion generation.
-
-Currently, my research focuses on **robot learning**, particularly **imitation learning** and **world models for reinforcement learning**. I am currently working on several projects in these areas, with papers in preparation for submission.
-
-Below is a summary of my research interests and technical skills.
+My research aims to enable robots to understand and interact with the physical world through learning-based approaches. My previous work includes **vision-based perception for soft robots**, where I developed markerless methods for reconstructing the shape of soft continuum robots. I have also worked on **generative models for human motion synthesis**, focusing on coordinated text-to-motion generation. Currently, my research focuses on **robot learning**, particularly **imitation learning** and **world models for reinforcement learning**. I am currently working on several projects in these areas, with papers in preparation for submission.
 
 ### 🔬 Research Skills
 
@@ -55,7 +49,7 @@ Below is a summary of my research interests and technical skills.
 ---
 
 # 📖 Educations
-- *2024.09 - now*, **Ph.D student, in Electrical and Computer Engineering**, Michigan State University. 
+- *2024.09 - now*, **Ph.D student, in Robotics**, Michigan State University. 
 - *2021.09 - 2024.06*, **M.S. in Artificial Intelligence**, Tsinghua University.
 - *2017.09 - 2021.06*, **B.S. in Automation**, Tsinghua University.
 
