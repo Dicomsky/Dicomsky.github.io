@@ -40,6 +40,7 @@ My research aims to enable robots to understand and interact with the physical w
   - Teleoperation
   - Imitation Learning
   - Simulation (PyBullet)
+  - 3D Reconstruction
 
 - **Programming**
   - Python, C++, C#, Matlab
