@@ -120,6 +120,71 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 </div>
 </div>
 
+
+# 📝 Projects
+
+<div class='paper-box'>
+<div class='paper-box-image'>
+<div>
+<div class="badge">Ongoing Research</div>
+<a href="images/wm_demo.png" target="_blank">
+  <img src="images/wm_demo.png" width="100%">
+</a>
+</div>
+</div>
+
+<div class='paper-box-text' markdown="1">
+
+**World Models for Atari Games**
+
+- Training a world model from scratch to learn Atari game dynamics and enable reinforcement learning through imagination.
+- Proposed a reference-conditioned observation generation mechanism that reduces pixel-level memorization and improves dynamics learning.
+- Work in progress; a research paper based on this project is currently in preparation.
+
+</div>
+</div>
+
+<div class='paper-box'>
+<div class='paper-box-image'>
+<div>
+<div class="badge">Ongoing Project</div>
+<a href="images/teleop_demo.mp4" target="_blank">
+<video width="100%" autoplay loop muted playsinline>
+  <source src="images/teleop_demo.mp4" type="video/mp4">
+</video>
+</a>
+</div>
+</div>
+
+<div class='paper-box-text' markdown="1">
+
+**Learning Intuitive Teleoperation for Heterogeneous Leader–Follower Robot Systems**
+
+- Developing a teleoperation system where a rigid robotic arm controls a soft continuum robot.
+- Proposed a self-supervised method to automatically align the action spaces between heterogeneous robots.
+- The approach is validated in simulation, with real-world experiments on the physical robot system currently in progress.
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div>
+<div class="badge">Project</div>
+<a href="images/CAD_pipeline.png" target="_blank">
+  <img src="images/CAD_pipeline.png" width="100%">
+</a>
+</div></div>
+<div class='paper-box-text' markdown="1">
+
+**Facial Representation-Based Coronary Artery Disease (CAD) Diagnosis**
+
+- Built a multi-camera acquisition array for large-scale facial data collection for medical analysis.
+- Implemented multi-view 3D face reconstruction to recover facial geometric structures for physiological feature modeling.
+- Applied transfer learning with parameter-efficient fine-tuning (PEFT) to adapt pretrained vision models to medical datasets.
+- Developed a multimodal learning framework integrating facial imagery and clinical metadata for CAD prediction.
+
+</div>
+</div>
+
 # 📖 Educations
 - *2024.09 - now*, **Ph.D student, in Electrical and Computer Engineering**, Michigan State University. 
 - *2021.09 - 2024.06*, **M.S. in Artificial Intelligence**, Tsinghua University.
