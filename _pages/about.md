@@ -215,5 +215,4 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 
 
 # 📫 Contact
-Email: yuanshan@msu.edu  
-GitHub: https://github.com/Dicomsky  
+Email: yuanshan@msu.edu
