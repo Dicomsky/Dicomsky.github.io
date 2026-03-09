@@ -21,7 +21,7 @@ I am a PhD student in Electrical and Computer Engineering at **Michigan State Un
 
 Before joining MSU, I received my **M.S. in Artificial Intelligence** and **B.S. in Automation** from **Tsinghua University**, where I was advised by **[Dr. Xiangyang Ji](https://www.au.tsinghua.edu.cn/info/1080/3178.htm)**. During my master's study, my research focused on **AI for healthcare**, including transfer learning with large models and multimodal data fusion. I also worked on **generative models**, particularly for text-to-motion generation.
 
-### Research Interests
+### 🧠 Research Interests
 
 I am a Ph.D. student with a strong interest in **intelligent robotic systems** that integrate perception, learning, and control. My research aims to enable robots to understand and interact with the physical world through learning-based approaches.
 
@@ -31,7 +31,7 @@ Currently, my research focuses on **robot learning**, particularly **imitation l
 
 Below is a summary of my research interests and technical skills.
 
-### Research Skills
+### 🔬 Research Skills
 
 - **Machine Learning**
   - World Models for Reinforcement Learning
