@@ -108,7 +108,7 @@ Yu Mei, **Shangyuan Yuan**, Xinda Qi, Preston Fairchild, Xiaobo Tan
 
 - A learning-based modeling framework for soft actuators using curvature representations inspired by Euler spirals to better capture deformation dynamics.
 
-[**Paper**]([#](https://arxiv.org/abs/2504.18692))
+[**Paper**](https://arxiv.org/abs/2504.18692)
 
 </div>
 </div>
@@ -130,7 +130,7 @@ Qiran Zou\*, **Shangyuan Yuan**\*, Shian Du, Yu Wang, Chang Liu, Yi Xu, Jie Chen
 
 - A generative framework for text-to-motion synthesis that models coordination between body parts to improve motion realism and controllability.
 
-[**Paper**]([#](https://arxiv.org/abs/2403.18512)) [**Code**]([#](https://github.com/qrzou/ParCo))
+[**Paper**](https://arxiv.org/abs/2403.18512) [**Code**](https://github.com/qrzou/ParCo)
 
 </div>
 </div>
@@ -149,7 +149,7 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 
 - Predicting coronary artery disease using facial thermal patterns captured through non-contact infrared thermography.
 
-[**Paper**]([#](https://pmc.ncbi.nlm.nih.gov/articles/PMC11149132/))
+[**Paper**](https://pmc.ncbi.nlm.nih.gov/articles/PMC11149132/)
 
 </div>
 </div>
