@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: ""
+description: "Shangyuan Yuan is a PhD student at Michigan State University working on robot learning, vision-language-action models, imitation learning, generative models, and soft robotics."
 author_profile: true
 redirect_from: 
   - /about/

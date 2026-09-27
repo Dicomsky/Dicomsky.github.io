@@ -14,6 +14,34 @@
 <link rel="stylesheet" href="assets/css/main.css">
 
 <meta http-equiv="cleartype" content="on">
-<head>
-  <base target="_blank">
-</head>
+
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shangyuan Yuan",
+  "url": "https://dicomsky.github.io/",
+  "image": "https://dicomsky.github.io/images/profile.jpg",
+  "jobTitle": "PhD Student in Electrical and Computer Engineering",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Michigan State University",
+    "url": "https://msu.edu/"
+  },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=OPfDqEwAAAAJ",
+    "https://orcid.org/0009-0006-8832-6372",
+    "https://www.linkedin.com/in/shangyuan-yuan-7b3220318",
+    "https://github.com/Dicomsky"
+  ],
+  "knowsAbout": [
+    "Robot Learning",
+    "Vision-Language-Action Models",
+    "Imitation Learning",
+    "Generative Models",
+    "Soft Robotics"
+  ]
+}
+</script>
+{% endif %}

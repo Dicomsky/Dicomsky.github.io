@@ -7,8 +7,10 @@
 
 # Site Settings
 title                    : "Shangyuan Yuan"
-description              : ""
-repository               : "RayeRen/acad-homepage.github.io"
+description              : "Shangyuan Yuan is a PhD student at Michigan State University working on robot learning, vision-language-action models, imitation learning, generative models, and soft robotics."
+url                      : "https://dicomsky.github.io"
+baseurl                  : ""
+repository               : "Dicomsky/Dicomsky.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -23,8 +25,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Shangyuan Yuan"
   avatar           : "images/profile.jpg"
-  bio              : "Michigan State University"
-  location         : "United States"
+  bio              : "PhD student in Electrical and Computer Engineering at Michigan State University"
+  location         : "East Lansing, Michigan, United States"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=OPfDqEwAAAAJ"
@@ -37,7 +39,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "github username"
+  github           : "Dicomsky"
   google_plus      :
   keybase          :
   instagram        :
