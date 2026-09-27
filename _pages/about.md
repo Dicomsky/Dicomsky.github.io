@@ -157,9 +157,7 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 <div>
 <div class="badge">Ongoing Research</div>
 <a href="projects/hierarchical-action-generation/">
-<video width="100%" autoplay loop muted playsinline preload="metadata">
-  <source src="projects/hierarchical-action-generation/assets/pipeline.mp4" type="video/mp4">
-</video>
+  <img src="projects/hierarchical-action-generation/assets/hierarchical-pipeline.png" width="100%" alt="Hierarchical action generation pipeline">
 </a>
 </div>
 </div>
