@@ -64,6 +64,10 @@
           <h2>Method</h2>
         </div>
         <p class="section-summary">We use partially denoised actions as a natural interface between slow, task-aware generation and fast, observation-conditioned refinement.</p>
+        <figure class="wide-figure method-overview">
+          <img src="assets/method-overview.png" alt="Overall method pipeline from task intent to observation-conditioned action alignment" loading="lazy">
+          <figcaption><strong>Method overview.</strong> The high-level VLA produces a reusable, partially denoised long-horizon plan. A lightweight refiner learns the final alignment stage and runs more frequently with current observations during asynchronous inference.</figcaption>
+        </figure>
         <div class="insight-grid">
           <article>
             <span class="insight-index">A</span>

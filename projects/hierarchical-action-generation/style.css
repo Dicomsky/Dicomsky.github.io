@@ -138,6 +138,7 @@ figcaption {
 .band { background: var(--soft); border-block: 1px solid var(--line); }
 .section-summary { max-width: 780px; margin: 0 auto 38px; color: var(--muted); text-align: center; }
 
+.method-overview { margin-bottom: 34px; }
 .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-bottom: 42px; background: var(--line); border: 1px solid var(--line); }
 .insight-grid article { padding: 28px; background: #fff; }
 .insight-grid p { margin-bottom: 0; color: var(--muted); font-size: .92rem; line-height: 1.65; }
