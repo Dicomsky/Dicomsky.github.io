@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A research project on stage-dependent conditioning and hierarchical action generation in vision-language-action models.">
+  <title>Stage-Dependent Conditioning for Hierarchical Action Generation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="home-link" href="/">Shangyuan Yuan</a>
+    <nav aria-label="Project navigation">
+      <a href="#overview">Overview</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#demos">Demos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">Research project</p>
+      <h1>Exploiting Stage-Dependent Conditioning Focus for Hierarchical Action Generation in Vision-Language-Action Models</h1>
+      <div class="authors" aria-label="Authors">
+        <span>Shangyuan Yuan<sup>1</sup></span>
+        <span>Xinda Qi<sup>1,2</sup></span>
+        <span>Yujiang Pu<sup>1</sup></span>
+        <span>Wenliang Guo<sup>1</sup></span>
+        <span>Xiaobo Tan<sup>1</sup></span>
+      </div>
+      <p class="affiliations"><sup>1</sup>Michigan State University &nbsp;&nbsp; <sup>2</sup>Ant Group</p>
+      <div class="project-meta" aria-label="Project status">
+        <span>Work in progress</span>
+      </div>
+      <p class="lead">A stage-aware hierarchy that reuses task-conditioned action structure while continuously refining local actions with up-to-date observations.</p>
+      <figure class="feature-media">
+        <video autoplay loop muted playsinline preload="metadata" poster="assets/hierarchical-pipeline.png">
+          <source src="assets/pipeline.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>Overview.</strong> A long-horizon, partially denoised action trajectory carries task intent forward, while lightweight refiners repeatedly incorporate the latest observation before execution.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section" id="overview">
+      <div class="section-heading">
+        <h2>Overview</h2>
+      </div>
+      <div class="two-column">
+        <div class="prose">
+          <p>Language instructions describe intent that often remains stable over many control steps. Visual observations, in contrast, change continuously as the robot moves and interacts with the scene. Processing both at the same rate can repeat expensive high-level computation without improving local responsiveness.</p>
+          <p>Our analysis suggests that generative action models already develop a useful coarse-to-fine structure: task-relevant action structure appears before denoising is complete, while later stages increasingly support alignment with the current observation.</p>
+        </div>
+        <figure class="figure-card">
+          <img src="assets/intro-conditioning.png" alt="Conceptual illustration and analysis of changing modality reliance over denoising stages" loading="lazy">
+          <figcaption>Conditioning focus evolves across the denoising trajectory, and useful task structure emerges before final refinement.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="method">
+      <div class="wrap section">
+        <div class="section-heading">
+          <h2>Method</h2>
+        </div>
+        <p class="section-summary">We use partially denoised actions as a natural interface between slow, task-aware generation and fast, observation-conditioned refinement.</p>
+        <div class="insight-grid">
+          <article>
+            <span class="insight-index">A</span>
+            <h3>Form task-aware structure</h3>
+            <p>A high-level VLA performs early denoising over a long horizon, producing an intermediate action trajectory that retains task intent.</p>
+          </article>
+          <article>
+            <span class="insight-index">B</span>
+            <h3>Reuse across control steps</h3>
+            <p>The intermediate trajectory is cached and reused, amortizing expensive high-level processing over multiple local action chunks.</p>
+          </article>
+          <article>
+            <span class="insight-index">C</span>
+            <h3>Refine with fresh observations</h3>
+            <p>A lightweight refiner runs at a higher frequency and completes late-stage generation using the latest visual feedback.</p>
+          </article>
+        </div>
+        <figure class="wide-figure">
+          <img src="assets/refiner-architecture.png" alt="Architecture of the lightweight observation-conditioned action refiner" loading="lazy">
+          <figcaption>The low-level refiner operates directly on partially denoised actions, avoiding a separately designed symbolic interface between hierarchy levels.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap section" id="results">
+      <div class="section-heading">
+        <h2>Experiments</h2>
+      </div>
+      <p class="section-summary">The hierarchy reduces repeated high-level computation while preserving strong task performance and responsive closed-loop control.</p>
+      <div class="result-grid">
+        <figure class="figure-card result-main">
+          <img src="assets/real-world-results.png" alt="Real-world success rate and latency comparison" loading="lazy">
+          <figcaption>Real-world evaluation compares task performance and action-generation latency across two manipulation settings.</figcaption>
+        </figure>
+        <figure class="figure-card">
+          <img src="assets/reuse-horizon.png" alt="Latency and success rate across high-level trajectory reuse horizons" loading="lazy">
+          <figcaption>Reusing high-level trajectories reduces repeated computation while maintaining strong task performance over a practical range.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band analysis" aria-labelledby="analysis-heading">
+      <div class="wrap section">
+        <div class="section-heading">
+          <h2 id="analysis-heading">Conditioning Analysis</h2>
+        </div>
+        <p class="section-summary">Attention patterns provide evidence that the information used by action queries changes across denoising stages.</p>
+        <figure class="wide-figure white">
+          <img src="assets/conditioning-analysis.png" alt="Attention allocation across denoising stages in two VLA action-generation backbones" loading="lazy">
+          <figcaption>Attention analysis across two generative VLA backbones reveals stage-dependent changes in how action queries use instruction, image, and other context.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap section" id="demos">
+      <div class="section-heading">
+        <h2>Real-World Demonstrations</h2>
+      </div>
+      <p class="section-intro">The demonstrations include PushBlock comparisons under different initial configurations and multi-task Fruit25 pick-and-place examples.</p>
+      <div class="demo-grid">
+        <figure class="demo-video">
+          <video controls playsinline preload="metadata" poster="assets/fruit25-scenes.png">
+            <source src="assets/demos.mp4" type="video/mp4">
+          </video>
+          <figcaption>PushBlock and Fruit25 real-world rollouts. Red borders indicate model inference; green borders indicate robot action execution.</figcaption>
+        </figure>
+        <figure class="figure-card scene-card">
+          <img src="assets/fruit25-scenes.png" alt="Representative Fruit25 object-to-target manipulation tasks" loading="lazy">
+          <figcaption>Representative instructions vary both the manipulated object and the target receptacle.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-label">Research project</p>
+        <p>Work in progress. Project details may evolve as the research develops.</p>
+      </div>
+      <a href="/">Back to Shangyuan Yuan's homepage</a>
+    </div>
+  </footer>
+</body>
+</html>

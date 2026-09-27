@@ -156,6 +156,29 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 <div class='paper-box-image'>
 <div>
 <div class="badge">Ongoing Research</div>
+<a href="projects/hierarchical-action-generation/">
+<video width="100%" autoplay loop muted playsinline preload="metadata">
+  <source src="projects/hierarchical-action-generation/assets/pipeline.mp4" type="video/mp4">
+</video>
+</a>
+</div>
+</div>
+
+<div class='paper-box-text' markdown="1">
+
+[**Exploiting Stage-Dependent Conditioning Focus for Hierarchical Action Generation in Vision-Language-Action Models**](projects/hierarchical-action-generation/)
+
+- Studying how instruction and visual conditioning play different roles across the action denoising process.
+- Using partially denoised actions to connect low-frequency task-aware generation with fast observation-conditioned refinement.
+- Improving control efficiency while preserving responsive closed-loop action generation.
+
+</div>
+</div>
+
+<div class='paper-box'>
+<div class='paper-box-image'>
+<div>
+<div class="badge">Ongoing Research</div>
 <a href="images/wm_demo.png" target="_blank">
   <img src="images/wm_demo.png" width="100%">
 </a>
