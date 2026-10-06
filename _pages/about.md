@@ -23,7 +23,7 @@ Before joining MSU, I received my **M.S. in Artificial Intelligence** and **B.S.
 
 ### 🧠 Research Interests
 
-My research aims to enable robots to understand and interact with the physical world through learning-based approaches. My previous work includes **vision-based perception for soft robots**, where I developed markerless methods for reconstructing the shape of soft continuum robots. I have also worked on **generative models for human motion synthesis**, focusing on coordinated text-to-motion generation. Currently, my research focuses on **robot learning**, particularly **imitation learning** and **world models for reinforcement learning**. I am currently working on several projects in these areas, with papers in preparation for submission.
+My research aims to enable robots to understand and interact with the physical world through learning-based approaches. My previous work includes **vision-based perception for soft robots**, where I developed markerless methods for reconstructing the shape of soft continuum robots. I have also worked on **generative models for human motion synthesis**, focusing on coordinated text-to-motion generation. Currently, my research focuses on **robot learning**, particularly **vision-language-action (VLA) models**, **imitation learning**, and **world models for reinforcement learning**. I am currently working on several projects in these areas, with papers in preparation for submission.
 
 ### 🔬 Research Skills
 
@@ -49,24 +49,45 @@ My research aims to enable robots to understand and interact with the physical w
 
 ---
 
-# 📖 Educations
+# 📖 Education
 - *2024.09 - now*, **Ph.D student, in Robotics**, Michigan State University. 
 - *2021.09 - 2024.06*, **M.S. in Artificial Intelligence**, Tsinghua University.
 - *2017.09 - 2021.06*, **B.S. in Automation**, Tsinghua University.
 
 # 🔥 News
 
+- *2026.10* – Released the project page for **[StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models](projects/stairvla/)**.
+
 - *2025.11* – Our paper **“AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots”** was accepted to **IEEE Robotics and Automation Letters (RA-L)**.
 
 - *2025.05* – Our paper **“Learning-Based Modeling of Soft Actuators Using Euler Spiral-Inspired Curvature”** was accepted to **MECC 2025**.
 
-- *2024.05* – Our paper **“ParCo: Part-Coordinating Text-to-Motion Synthesis”** was accepted to **ECCV 2024**.
-
 - *2024.08* – Started my **PhD in Electrical and Computer Engineering at Michigan State University**, working with **Dr. Xiaobo Tan** in the **Smart Microsystems Lab**.
+
+- *2024.05* – Our paper **“ParCo: Part-Coordinating Text-to-Motion Synthesis”** was accepted to **ECCV 2024**.
 
 - *2024.03* – Our paper on **coronary artery disease prediction using infrared thermography** was published in **BMJ Health & Care Informatics**.
 
 # 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div>
+<div class="badge">Preprint 2026</div>
+<a href="projects/stairvla/">
+  <img src="projects/stairvla/assets/hierarchical-pipeline.png" width="100%" alt="StairVLA framework">
+</a>
+</div></div>
+<div class='paper-box-text' markdown="1">
+
+**StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models**
+
+**Shangyuan Yuan**, Xinda Qi, Yujiang Pu, Wenliang Guo, Xiaobo Tan
+
+- A high-level VLA produces a reusable, partially denoised long-horizon trajectory, and a lightweight refiner completes each action chunk from the latest observation. On LIBERO, this improves success from 96.5% to 97.8% while cutting latency from 115.0 ms to 44.2 ms per action chunk.
+
+[**Project Page**](projects/stairvla/)
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div>
 <div class="badge">RA-L 2025</div>
@@ -151,27 +172,6 @@ Minghui Kung, Juntong Zeng, Shen Lin, Xuexin Yu, Chang Liu, Mengnan Shi, Runchen
 
 
 # 📝 Projects
-
-<div class='paper-box'>
-<div class='paper-box-image'>
-<div>
-<div class="badge">Ongoing Research</div>
-<a href="projects/hierarchical-action-generation/">
-  <img src="projects/hierarchical-action-generation/assets/hierarchical-pipeline.png" width="100%" alt="Hierarchical action generation pipeline">
-</a>
-</div>
-</div>
-
-<div class='paper-box-text' markdown="1">
-
-[**Exploiting Stage-Dependent Conditioning Focus for Hierarchical Action Generation in Vision-Language-Action Models**](projects/hierarchical-action-generation/)
-
-- Studying how instruction and visual conditioning play different roles across the action denoising process.
-- Using partially denoised actions to connect low-frequency task-aware generation with fast observation-conditioned refinement.
-- Improving control efficiency while preserving responsive closed-loop action generation.
-
-</div>
-</div>
 
 <div class='paper-box'>
 <div class='paper-box-image'>

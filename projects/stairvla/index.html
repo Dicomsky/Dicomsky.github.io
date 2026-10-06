@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models</title>
+  <meta name="description" content="StairVLA uses partially denoised actions as the interface between a high-level VLA and a lightweight, high-frequency refiner, reducing inference latency while keeping strong task performance.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dicomsky.github.io/projects/stairvla/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="StairVLA">
+  <meta property="og:title" content="StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models">
+  <meta property="og:description" content="A high-level VLA produces a reusable, partially denoised trajectory; a lightweight refiner finishes each action chunk from the latest observation.">
+  <meta property="og:url" content="https://dicomsky.github.io/projects/stairvla/">
+  <meta property="og:image" content="https://dicomsky.github.io/projects/stairvla/assets/hierarchical-pipeline.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f5f9e'/%3E%3Cpath d='M4 19h4.5v-4.5H13V10h4.5V5.5H20' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models",
+    "author": [
+      {"@type": "Person", "name": "Shangyuan Yuan", "url": "https://dicomsky.github.io/"},
+      {"@type": "Person", "name": "Xinda Qi"},
+      {"@type": "Person", "name": "Yujiang Pu", "url": "https://www.yujiangpu.com/"},
+      {"@type": "Person", "name": "Wenliang Guo", "url": "https://wenliangguo.github.io/"},
+      {"@type": "Person", "name": "Xiaobo Tan", "url": "https://www.egr.msu.edu/~xbtan/"}
+    ],
+    "datePublished": "2026",
+    "url": "https://dicomsky.github.io/projects/stairvla/",
+    "image": "https://dicomsky.github.io/projects/stairvla/assets/hierarchical-pipeline.png"
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h5v-5h5v-5h5V5h3" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>StairVLA</a>
+      <nav aria-label="Sections">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#demos">Real Robot</a>
+        <a href="#bibtex">BibTeX</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <h1><span class="name">StairVLA</span>Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models</h1>
+
+      <p class="tagline">Partially denoise a long-horizon plan, reuse it, and finish each action chunk from the latest observation.</p>
+
+      <p class="authors">
+        <span class="author"><a href="https://dicomsky.github.io/">Shangyuan Yuan</a><sup>1</sup></span>
+        <span class="author">Xinda Qi<sup>1,2</sup></span>
+        <span class="author"><a href="https://www.yujiangpu.com/">Yujiang Pu</a><sup>1</sup></span>
+        <span class="author"><a href="https://wenliangguo.github.io/">Wenliang Guo</a><sup>1</sup></span>
+        <span class="author"><a href="https://www.egr.msu.edu/~xbtan/">Xiaobo Tan</a><sup>1</sup></span>
+      </p>
+      <p class="affiliations"><sup>1</sup>Michigan State University &nbsp;&nbsp; <sup>2</sup>Ant Group</p>
+
+      <div class="buttons">
+        <!-- TODO: replace with the arXiv link -->
+        <span class="button disabled" title="Coming soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M15 2v5h5M9 13h7M9 17h7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Paper <em>coming soon</em>
+        </span>
+        <!-- TODO: replace with the public code repository -->
+        <span class="button disabled" title="Coming soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+          Code <em>coming soon</em>
+        </span>
+        <a class="button" href="#demos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m17 10 5-3v10l-5-3z" fill="currentColor"/></svg>
+          Video
+        </a>
+        <a class="button" href="#bibtex">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H5v16h3M16 4h3v16h-3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          BibTeX
+        </a>
+      </div>
+
+      <figure class="teaser">
+        <video autoplay loop muted playsinline preload="metadata" poster="assets/hierarchical-pipeline.png">
+          <source src="assets/pipeline.mp4" type="video/mp4">
+        </video>
+        <figcaption>A high-level VLA runs the early denoising steps once and caches a long-horizon, partially denoised trajectory. A lightweight refiner finishes each local action chunk from the latest observation, so the expensive VLA call is shared across several control cycles.</figcaption>
+      </figure>
+
+      <div class="highlights">
+        <div><strong>+1.3 pts</strong><span>LIBERO success, 96.5% → 97.8% (GR00T-base)</span></div>
+        <div><strong>2.6× faster</strong><span>latency per action chunk, 115.0 → 44.2 ms</span></div>
+        <div><strong>81.2% · 60.0%</strong><span>real-robot success on Fruit25 and PushBlock, best of three methods</span></div>
+      </div>
+    </section>
+
+    <section class="section wrap narrow" id="abstract">
+      <h2>Abstract</h2>
+      <p>Vision-language-action (VLA) models increasingly rely on diffusion- or flow-matching-based action heads to generate continuous robot actions. These action heads typically process the denoising trajectory in a largely uniform manner. However, we observe that the conditioning focus naturally shifts across denoising stages: early stages combine language instructions and visual observations to establish a coarse action trajectory, whereas later stages place greater emphasis on current visual observations for action alignment. Based on this insight, we introduce StairVLA, a stage-aware hierarchical action generation framework that uses partially denoised actions as a natural interface between coarse long-horizon action generation and local refinement. A high-level VLA performs early denoising to produce a reusable long-horizon partially denoised action trajectory, while a lightweight refiner operates at a higher frequency to refine local action chunks using the latest observations. This design amortizes expensive high-level VLA computation while preserving frequent closed-loop correction. On LIBERO, our GR00T-style instantiation improves average success from 96.5% to 97.8% while reducing amortized inference latency from 115.0 ms to 44.2 ms per action chunk. More broadly, across two VLA backbones, simulation benchmarks, and real-robot tasks, StairVLA consistently reduces inference cost while maintaining strong task performance.</p>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <h2>Motivation</h2>
+        <p class="lede">The conditioning focus of a generative action head changes as denoising proceeds: instruction and image jointly shape the coarse trajectory early on, and the current image matters more near the end. Task competence is largely in place before denoising completes.</p>
+        <figure class="figure">
+          <img src="assets/intro-conditioning.png" alt="Stage-dependent modality reliance, attention analysis across denoising progress, and task success versus denoising progress" loading="lazy">
+          <figcaption>(A) Conditioning focus shifts across denoising stages. (B) Relative attention to image tokens grows toward the end of denoising. (C) Success rate when executing partially denoised actions rises well before denoising completes.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section wrap" id="method">
+      <h2>Method</h2>
+      <p class="lede">StairVLA uses the partially denoised trajectory as the interface between two levels.</p>
+      <figure class="figure">
+        <img src="assets/hierarchical-pipeline.png" alt="StairVLA framework: high-level generation, low-level refinement, and action execution over time" loading="lazy">
+        <figcaption>The high-level VLA turns noise into a partially denoised long-horizon trajectory at t<sub>0</sub>. At each later step, the refiner takes the matching segment and the newest observation and produces an executable action chunk.</figcaption>
+      </figure>
+      <div class="cards">
+        <article>
+          <span class="step">1</span>
+          <h3>Early denoising at the high level</h3>
+          <p>A VLA (Qwen3-VL with a flow-matching head) denoises a long horizon (H = 32) only up to an intermediate progress α, keeping the task intent encoded by instruction and image.</p>
+        </article>
+        <article>
+          <span class="step">2</span>
+          <h3>Reuse across control cycles</h3>
+          <p>The partially denoised trajectory is cached and reused for M refinement cycles, so the expensive VLA call is amortized over many executed actions.</p>
+        </article>
+        <article>
+          <span class="step">3</span>
+          <h3>Late refinement from fresh observations</h3>
+          <p>A lightweight DiT refiner completes the remaining denoising for each chunk, conditioned on a SigLIP encoding of the latest image, compressed VLA features, and neighboring trajectory context.</p>
+        </article>
+      </div>
+      <figure class="figure">
+        <img src="assets/refiner-architecture.png" alt="Refiner architecture: SigLIP visual encoder, token compression, partially denoised actions with left and right context, and a cross-attention DiT" loading="lazy">
+        <figcaption>The refiner. Current-observation tokens, compressed high-level VLM tokens, and the query chunk with its left and right context feed a DiT that alternates cross- and self-attention and predicts the remaining flow-matching velocity.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section band" id="results">
+      <div class="wrap">
+        <h2>Results</h2>
+
+        <h3>LIBERO</h3>
+        <p class="note">Success rate (%) over 500 trials per suite with one model trained on all four suites. Latency is per executable action chunk on one NVIDIA A100, including the amortized high-level cost.</p>
+        <figure class="chart-card">
+          <div class="chart-legend" aria-hidden="true">
+            <span><i class="key ours"></i>StairVLA</span>
+            <span><i class="key base"></i>StarVLA baseline</span>
+            <span><i class="key arrow"></i>same backbone</span>
+          </div>
+          <div class="chart-scroll">
+            <div class="chart-box">
+<svg class="tradeoff" viewBox="0 0 680 350" role="img" aria-labelledby="tradeoff-title tradeoff-desc">
+<title id="tradeoff-title">LIBERO success rate versus latency</title>
+<desc id="tradeoff-desc">StairVLA moves both backbones up and to the left: GR00T-base from 96.5% at 115.0 ms to 97.8% at 44.2 ms; pi-base from 97.8% at 183.3 ms to 98.3% at 44.5 ms.</desc>
+<defs><marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arrow-head"/></marker></defs>
+<line class="grid" x1="60" x2="656" y1="292.0" y2="292.0"/>
+<text class="tick" x="50" y="296.0" text-anchor="end">96</text>
+<line class="grid" x1="60" x2="656" y1="187.4" y2="187.4"/>
+<text class="tick" x="50" y="191.4" text-anchor="end">97</text>
+<line class="grid" x1="60" x2="656" y1="82.8" y2="82.8"/>
+<text class="tick" x="50" y="86.8" text-anchor="end">98</text>
+<text class="tick" x="60.0" y="312" text-anchor="middle">0</text>
+<text class="tick" x="209.0" y="312" text-anchor="middle">50</text>
+<text class="tick" x="358.0" y="312" text-anchor="middle">100</text>
+<text class="tick" x="507.0" y="312" text-anchor="middle">150</text>
+<text class="tick" x="656.0" y="312" text-anchor="middle">200</text>
+<line class="axis" x1="60" x2="656" y1="292" y2="292"/>
+<text class="axis-title" x="358.0" y="342" text-anchor="middle">Latency per action chunk (ms) · lower is better</text>
+<text class="axis-title" transform="translate(16 156.0) rotate(-90)" text-anchor="middle">LIBERO avg. success (%) · higher is better</text>
+<line class="arrow" x1="393.5" y1="233.7" x2="203.5" y2="111.3" marker-end="url(#arrowhead)"/>
+<text class="annot" x="352.0" y="200.0" text-anchor="start">2.6× faster · +1.3 pts</text>
+<line class="arrow" x1="595.3" y1="102.3" x2="206.5" y2="53.1" marker-end="url(#arrowhead)"/>
+<text class="annot" x="399.4" y="65.5" text-anchor="middle">4.1× faster · +0.5 pts</text>
+<g class="pt base" tabindex="0" data-tip="StarVLA-GR00T|96.5% success|115.0 ms per chunk" aria-label="StarVLA-GR00T: 96.5% success, 115.0 ms per chunk">
+<circle class="hit" cx="402.7" cy="239.7" r="16"/>
+<circle class="dot" cx="402.7" cy="239.7" r="6"/>
+</g>
+<text class="label" x="416.7" y="244.7" text-anchor="start">StarVLA-GR00T</text>
+<g class="pt ours" tabindex="0" data-tip="StairVLA (GR00T-base)|97.8% success|44.2 ms per chunk" aria-label="StairVLA (GR00T-base): 97.8% success, 44.2 ms per chunk">
+<circle class="hit" cx="191.7" cy="103.7" r="16"/>
+<circle class="dot" cx="191.7" cy="103.7" r="6"/>
+</g>
+<text class="label" x="177.7" y="108.7" text-anchor="end">StairVLA (GR00T-base)</text>
+<g class="pt base" tabindex="0" data-tip="StarVLA-π|97.8% success|183.3 ms per chunk" aria-label="StarVLA-π: 97.8% success, 183.3 ms per chunk">
+<circle class="hit" cx="606.2" cy="103.7" r="16"/>
+<circle class="dot" cx="606.2" cy="103.7" r="6"/>
+</g>
+<text class="label" x="606.2" y="129.7" text-anchor="middle">StarVLA-π</text>
+<g class="pt ours" tabindex="0" data-tip="StairVLA (π-base)|98.3% success|44.5 ms per chunk" aria-label="StairVLA (π-base): 98.3% success, 44.5 ms per chunk">
+<circle class="hit" cx="192.6" cy="51.4" r="16"/>
+<circle class="dot" cx="192.6" cy="51.4" r="6"/>
+</g>
+<text class="label" x="178.6" y="56.4" text-anchor="end">StairVLA (π-base)</text>
+</svg>
+              <div class="chart-tip" role="status" hidden></div>
+            </div>
+          </div>
+          <figcaption>For both backbones, StairVLA is more accurate and several times faster than the StarVLA model it builds on. The table below lists the same numbers.</figcaption>
+        </figure>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Method</th><th>Spatial</th><th>Object</th><th>Goal</th><th>Long</th><th>Avg.</th><th>Latency (ms)</th></tr></thead>
+            <tbody>
+              <tr><td>StarVLA-GR00T<sup>†</sup></td><td>97.8</td><td>98.8</td><td>97.4</td><td>92.0</td><td>96.5</td><td>115.0</td></tr>
+              <tr class="ours"><td>StairVLA (GR00T-base)</td><td>98.0</td><td>99.6</td><td>97.8</td><td>95.8</td><td><b>97.8</b></td><td><b>44.2</b></td></tr>
+              <tr><td>StarVLA-π<sup>†</sup></td><td>99.2</td><td>99.0</td><td>97.2</td><td>95.8</td><td>97.8</td><td>183.3</td></tr>
+              <tr class="ours"><td>StairVLA (π-base)</td><td>99.6</td><td>99.0</td><td>96.8</td><td>97.4</td><td><b>98.3</b></td><td><b>44.5</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note"><sup>†</sup> Success rates reported by <a href="https://github.com/starVLA/starVLA">StarVLA</a>. Comparisons with other hierarchical and coarse-to-fine VLAs are in the paper.</p>
+
+        <div class="split">
+          <div>
+            <h3>Ablations</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Setting</th><th>Avg.</th><th>Δ</th></tr></thead>
+                <tbody>
+                  <tr><td>StarVLA-GR00T</td><td>96.5</td><td>–</td></tr>
+                  <tr><td>High-level policy only (H = 32)</td><td>92.4</td><td>−4.1</td></tr>
+                  <tr><td>StairVLA w/o action context</td><td>97.2</td><td>+0.7</td></tr>
+                  <tr class="ours"><td>StairVLA</td><td><b>97.8</b></td><td><b>+1.3</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">Running the long-horizon policy alone loses accuracy; the observation-conditioned refiner recovers it, and the temporal action context adds a further gain.</p>
+          </div>
+          <figure class="figure">
+            <img src="assets/reuse-horizon.png" alt="Latency and success rate versus reuse horizon M for Libra-VLA, top-only, and StairVLA" loading="lazy">
+            <figcaption>Reusing each high-level trajectory for more refinement cycles (larger M) lowers latency while success stays high.</figcaption>
+          </figure>
+        </div>
+
+        <h3>LIBERO-Plus</h3>
+        <p class="note">Robustness to seven perturbation types, zero-shot from LIBERO and after fine-tuning on LIBERO-Plus.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Setting</th><th>Camera</th><th>Robot</th><th>Language</th><th>Light</th><th>Background</th><th>Noise</th><th>Layout</th><th>Avg.</th></tr></thead>
+            <tbody>
+              <tr><td>Zero-shot</td><td>43.7</td><td>54.5</td><td>82.5</td><td>93.4</td><td>90.5</td><td>67.8</td><td>74.0</td><td>70.4</td></tr>
+              <tr class="ours"><td>Fine-tuned</td><td>95.5</td><td>48.4</td><td>83.7</td><td>96.8</td><td>94.9</td><td>95.4</td><td>77.4</td><td><b>83.7</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="demos">
+      <h2>Real-Robot Experiments</h2>
+      <p class="lede">An AgileX PiperX arm with a fixed top camera and a wrist camera. Fruit25 has 24 pick-and-place tasks plus a multi-object sorting task (8 Hz); PushBlock is a contact-rich pushing task (20 Hz). All methods use Qwen3-VL-2B and run on the same RTX A4000.</p>
+      <figure class="figure narrow-figure">
+        <img src="assets/real-world-results.png" alt="Real-world success rate and latency of StarVLA-GR00T, StarVLA-pi, and StairVLA on Fruit25 and PushBlock" loading="lazy">
+        <figcaption>Success rate and model latency on the real robot.</figcaption>
+      </figure>
+
+      <h3>PushBlock</h3>
+      <p class="note">Top camera, 4× speed. <span class="tag red">Red border</span> model inference, <span class="tag green">green border</span> action execution; the counter shows executed action chunks.</p>
+      <div class="video-grid">
+        <figure class="figure">
+          <video autoplay loop muted playsinline preload="metadata"><source src="assets/pushblock-hard.mp4" type="video/mp4"></video>
+          <figcaption>Harder start, similar layout: StairVLA pushes the block into the target; StarVLA-GR00T does not.</figcaption>
+        </figure>
+        <figure class="figure">
+          <video autoplay loop muted playsinline preload="metadata"><source src="assets/pushblock-easy.mp4" type="video/mp4"></video>
+          <figcaption>Easier start: both succeed, StairVLA at about 36 s and StarVLA-GR00T near the 50 s limit.</figcaption>
+        </figure>
+      </div>
+
+      <h3>Fruit25</h3>
+      <figure class="figure">
+        <video autoplay loop muted playsinline preload="metadata"><source src="assets/fruit25-demo.mp4" type="video/mp4"></video>
+        <figcaption>StairVLA on three language-conditioned tasks (2× speed).</figcaption>
+      </figure>
+
+      <h3>Full video</h3>
+      <figure class="figure">
+        <video controls playsinline preload="none" poster="assets/fruit25-scenes.png">
+          <source src="assets/demos.mp4" type="video/mp4">
+        </video>
+        <figcaption>Supplementary video: PushBlock comparisons under two initial configurations and Fruit25 examples.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <h2>Attention Across Denoising Stages</h2>
+        <figure class="figure">
+          <img src="assets/conditioning-analysis.png" alt="Attention mass over task instruction, prompts, image tokens, and special tokens across denoising stages for GR00T- and pi-style heads" loading="lazy">
+          <figcaption>Attention mass of the action queries over input token groups, first and last layer, for GR00T-style and π-style action heads.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section wrap narrow" id="bibtex">
+      <h2>BibTeX</h2>
+      <div class="bibtex">
+        <button type="button" class="copy" data-target="bib">Copy</button>
+<pre id="bib"><code>@article{yuan2026stairvla,
+  title   = {StairVLA: Stage-Aware Hierarchical Action Generation for Vision-Language-Action Models},
+  author  = {Yuan, Shangyuan and Qi, Xinda and Pu, Yujiang and Guo, Wenliang and Tan, Xiaobo},
+  journal = {arXiv preprint},
+  year    = {2026}
+}</code></pre>
+      </div>
+      <p class="note">StairVLA is built on <a href="https://github.com/starVLA/starVLA">StarVLA</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 The StairVLA authors</span>
+      <a href="https://dicomsky.github.io/">dicomsky.github.io</a>
+    </div>
+  </footer>
+
+  <script>
+    // Chart tooltips (hover and keyboard focus)
+    document.querySelectorAll(".chart-box").forEach(function (box) {
+      var tip = box.querySelector(".chart-tip");
+      var svg = box.querySelector("svg");
+      function show(g) {
+        var parts = g.dataset.tip.split("|");
+        tip.innerHTML = "<b>" + parts[0] + "</b><br>" + parts.slice(1).join("<br>");
+        var dot = g.querySelector(".dot");
+        var vb = svg.viewBox.baseVal, r = svg.getBoundingClientRect(), k = r.width / vb.width;
+        var x = dot.cx.baseVal.value * k, y = dot.cy.baseVal.value * k;
+        tip.hidden = false;
+        var left = Math.min(Math.max(x - tip.offsetWidth / 2, 4), r.width - tip.offsetWidth - 4);
+        tip.style.left = left + "px";
+        tip.style.top = Math.max(y - tip.offsetHeight - 14, 4) + "px";
+      }
+      function hide() { tip.hidden = true; }
+      box.querySelectorAll(".pt").forEach(function (g) {
+        g.addEventListener("mouseenter", function () { show(g); });
+        g.addEventListener("focus", function () { show(g); });
+        g.addEventListener("mouseleave", hide);
+        g.addEventListener("blur", hide);
+      });
+    });
+
+    // Highlight the current section in the top bar
+    var links = Array.prototype.slice.call(document.querySelectorAll(".topbar nav a"));
+    var targets = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id); });
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      targets.forEach(function (t) { if (t) io.observe(t); });
+    }
+
+    document.querySelectorAll("button.copy").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var text = document.getElementById(btn.dataset.target).innerText;
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = "Copied";
+          setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
